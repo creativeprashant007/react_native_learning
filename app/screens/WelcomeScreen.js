@@ -18,7 +18,7 @@ function WelcomeScreen(props) {
   );
 }
 const styles = StyleSheet.create({
-  background: { flex: 1, justifyContent: "flex-end", alignItems: "center" },
+  background: { flex: 1, justifyContent: "flex-end", alignItems: "center", },
   reisterButton: {
     width: "100%",
     height: 70,
