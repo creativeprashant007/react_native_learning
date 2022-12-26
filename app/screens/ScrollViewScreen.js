@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, SafeAreaView, ScrollView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 
 function ScrollViewScreen(props) {
   const [people, setPeople] = useState([
@@ -18,16 +26,35 @@ function ScrollViewScreen(props) {
     { name: "tom", key: "13" },
     { name: "marty", key: "14" },
   ]);
+
+  const itemPressHandler = (id) => {
+    console.log(id);
+    console.log("press");
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      {/* <ScrollView>
         {people.map((item) => (
           <View key={item.key} style={styles.itemView}>
             <Text style={styles.item}>{item.key}</Text>
             <Text style={styles.item}>{item.name}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollView> */}
+
+      <FlatList
+        data={people}
+        keyExtractor={(item) => item.key}
+        numColumns={1}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => itemPressHandler(item.key)}>
+            <View style={styles.itemView}>
+              <Text style={styles.item}>{item.key}</Text>
+              <Text style={styles.item}>{item.name}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </SafeAreaView>
   );
 }
