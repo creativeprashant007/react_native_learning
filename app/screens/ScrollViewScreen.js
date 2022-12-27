@@ -28,8 +28,9 @@ function ScrollViewScreen(props) {
   ]);
 
   const itemPressHandler = (id) => {
-    console.log(id);
-    console.log("press");
+    setPeople((prevPeople)=>{
+      return prevPeople.filter(person=>person.key != id)
+    });
   };
   return (
     <SafeAreaView style={styles.container}>
