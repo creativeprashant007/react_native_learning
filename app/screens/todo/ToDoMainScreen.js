@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { View, StyleSheet, FlatList, Text, SafeAreaView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  Text,
+  SafeAreaView,
+  Alert,
+} from "react-native";
+import AddToDo from "../../../components/AddToDo";
 import Header from "../../../components/Header";
+import ToDoItem from "../../../components/ToDoItem";
 
 function ToDoMainScreen(props) {
   const [todos, setTodos] = useState([
@@ -9,16 +18,46 @@ function ToDoMainScreen(props) {
     { text: "play clash of clans", key: "3" },
     { text: "having lunch", key: "4" },
   ]);
+
+  const pressHandler = (key) => {
+    Alert.alert("WARNING!!!", "Do you really want to delete?", [
+      {
+        text: "OK",
+        onPress: () => {
+          setTodos((prevTodos) => {
+            return prevTodos.filter((todo) => todo.key != key);
+          });
+        },
+      },
+      { text: "Cancel", onPress: () => console.log("cancel") },
+      { text: "Not interested", onPress: () => console.log("cancel") },
+    ]);
+  };
+
+  const submitHandler = (text) => {
+    if (text.length > 3) {
+      setTodos((prevTodos) => {
+        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
+      });
+    } else {
+      Alert.alert("OOPS!!!", "Todos mush be over 3 chars long", [
+        { text: "Unserstood", onPress: () => console.log("alert close") },
+      ]);
+    }
+  };
   return (
     <View>
       {/* header */}
       <Header />
       <View style={styles.content}>
         {/* do form*/}
+        <AddToDo pressHandler={submitHandler} />
         <View style={styles.list}>
           <FlatList
             data={todos}
-            renderItem={({ item }) => <Text>{item.text}</Text>}
+            renderItem={({ item }) => (
+              <ToDoItem item={item} pressHandler={pressHandler} />
+            )}
           />
         </View>
       </View>
