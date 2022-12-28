@@ -6,9 +6,12 @@ import {
   Text,
   SafeAreaView,
   Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import AddToDo from "../../../components/AddToDo";
 import Header from "../../../components/Header";
+import Sandbox from "../../../components/Standbox";
 import ToDoItem from "../../../components/ToDoItem";
 
 function ToDoMainScreen(props) {
@@ -33,6 +36,10 @@ function ToDoMainScreen(props) {
       { text: "Not interested", onPress: () => console.log("cancel") },
     ]);
   };
+  const dismissKeyboard = () => {
+    console.log("dismiss keyboard");
+    Keyboard.dismiss();
+  };
 
   const submitHandler = (text) => {
     if (text.length > 3) {
@@ -46,22 +53,25 @@ function ToDoMainScreen(props) {
     }
   };
   return (
-    <View>
-      {/* header */}
-      <Header />
-      <View style={styles.content}>
-        {/* do form*/}
-        <AddToDo pressHandler={submitHandler} />
-        <View style={styles.list}>
-          <FlatList
-            data={todos}
-            renderItem={({ item }) => (
-              <ToDoItem item={item} pressHandler={pressHandler} />
-            )}
-          />
-        </View>
-      </View>
-    </View>
+    // <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
+    //   <View>
+    //     {/* header */}
+    //     <Header />
+    //     <View style={styles.content}>
+    //       {/* do form*/}
+    //       <AddToDo pressHandler={submitHandler} />
+    //       <View style={styles.list}>
+    //         <FlatList
+    //           data={todos}
+    //           renderItem={({ item }) => (
+    //             <ToDoItem item={item} pressHandler={pressHandler} />
+    //           )}
+    //         />
+    //       </View>
+    //     </View>
+    //   </View>
+    // </TouchableWithoutFeedback>
+    <Sandbox />
   );
 }
 const styles = StyleSheet.create({
