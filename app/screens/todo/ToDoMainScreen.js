@@ -54,7 +54,7 @@ function ToDoMainScreen(props) {
   };
   return (
     <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
-      <View style={styles.container}>
+      <View>
         {/* header */}
         <Header />
         <View style={styles.content}>
@@ -71,7 +71,7 @@ function ToDoMainScreen(props) {
         </View>
       </View>
     </TouchableWithoutFeedback>
-    // <Sandbox />
+    //<Sandbox />
   );
 }
 const styles = StyleSheet.create({
@@ -81,13 +81,11 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
-    backgroundColor: "pink",
-    flex: 1,
+    // flex: 1,
   },
   list: {
+    //flex: 1,
     marginTop: 20,
-    backgroundColor: "yellow",
-    flex: 1,
   },
 });
 
