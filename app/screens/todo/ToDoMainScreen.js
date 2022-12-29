@@ -53,25 +53,25 @@ function ToDoMainScreen(props) {
     }
   };
   return (
-    // <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
-    //   <View>
-    //     {/* header */}
-    //     <Header />
-    //     <View style={styles.content}>
-    //       {/* do form*/}
-    //       <AddToDo pressHandler={submitHandler} />
-    //       <View style={styles.list}>
-    //         <FlatList
-    //           data={todos}
-    //           renderItem={({ item }) => (
-    //             <ToDoItem item={item} pressHandler={pressHandler} />
-    //           )}
-    //         />
-    //       </View>
-    //     </View>
-    //   </View>
-    // </TouchableWithoutFeedback>
-    <Sandbox />
+    <TouchableWithoutFeedback onPress={() => dismissKeyboard()}>
+      <View>
+        {/* header */}
+        <Header />
+        <View style={styles.content}>
+          {/* do form*/}
+          <AddToDo pressHandler={submitHandler} />
+          <View style={styles.list}>
+            <FlatList
+              data={todos}
+              renderItem={({ item }) => (
+                <ToDoItem item={item} pressHandler={pressHandler} />
+              )}
+            />
+          </View>
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
+    //<Sandbox />
   );
 }
 const styles = StyleSheet.create({
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
+    flex: 1,
   },
   list: {
     marginTop: 20,
