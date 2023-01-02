@@ -1,16 +1,21 @@
-import {} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import LoginForm from "./app/screens/LoginForm";
-import ScrollViewScreen from "./app/screens/ScrollViewScreen";
-import ToDoMainScreen from "./app/screens/todo/ToDoMainScreen";
 import Home from "./app/screens/reviewapp/Home";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
+import { useState } from "react";
+
+const getFonts = () =>
+  Font.loadAsync({
+    "nunito-regular": require("/Users/preashanttimalsina/Desktop/rtw/react_native_r_n_d/AwesomeProject/app/assets/fonts/Nunito-Regular.ttf"),
+    "nunito-bold": require("/Users/preashanttimalsina/Desktop/rtw/react_native_r_n_d/AwesomeProject/app/assets/fonts/Nunito-Bold.ttf"),
+  });
 
 export default function App() {
-  const { landscape } = useDeviceOrientation();
-  return <Home />;
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  if (fontsLoaded) {
+    return <Home />;
+  } else {
+    return (
+      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
+    );
+  }
 }

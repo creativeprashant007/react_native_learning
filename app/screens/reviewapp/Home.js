@@ -11,7 +11,8 @@ function Home(props) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    padding: 100,
   },
+  titleText: {},
 });
 export default Home;
