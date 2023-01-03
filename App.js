@@ -2,6 +2,7 @@ import Home from "./app/screens/reviewapp/Home";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { useState } from "react";
+import Navigator from "./routes/HomeStack";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -12,7 +13,7 @@ const getFonts = () =>
 export default function App() {
   // const [fontsLoaded, setFontsLoaded] = useState(false);
   // if (fontsLoaded) {
-  return <Home />;
+  return <Navigator />;
   //  } else {
   // return (
   //   <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
