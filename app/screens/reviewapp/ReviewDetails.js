@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
-
+import { globalStyles } from "../../../styles/global_style";
 function ReviewDetails(props) {
   return (
-    <View style={styles.container}>
-      <Text>Review Details Screen</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.titleText}>Home Screen</Text>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {},
-});
+
 export default ReviewDetails;
