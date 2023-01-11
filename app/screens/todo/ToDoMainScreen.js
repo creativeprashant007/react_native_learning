@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import SafeAreaView from 'react-native-safe-area-view';
 import AddToDo from "../../../components/AddToDo";
 import Header from "../../../components/Header";
 import Sandbox from "../../../components/Standbox";

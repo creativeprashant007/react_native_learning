@@ -13,4 +13,9 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 8,
     lineHeight: 20,
   },
+  appBarStyle: {
+    backgroundColor: "#eed",
+    height: 60,
+  },
 });
+var headerTitleColor = "#444";
