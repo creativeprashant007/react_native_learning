@@ -6,17 +6,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import About from "./app/screens/reviewapp/About";
 import ReviewDetails from "./app/screens/reviewapp/ReviewDetails";
 import { globalStyles } from "./styles/global_style";
-// import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Stack = createNativeStackNavigator();
-// const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      {/* <Drawer.Navigator>
+      <Drawer.Navigator>
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="About" component={About} />
-      </Drawer.Navigator> */}
+      </Drawer.Navigator>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
