@@ -7,9 +7,11 @@ import About from "./app/screens/reviewapp/About";
 import ReviewDetails from "./app/screens/reviewapp/ReviewDetails";
 import { globalStyles } from "./styles/global_style";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import "react-native-gesture-handler";
 
-const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -17,7 +19,8 @@ export default function App() {
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="About" component={About} />
       </Drawer.Navigator>
-      <Stack.Navigator>
+
+      {/* <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Home}
@@ -36,7 +39,7 @@ export default function App() {
             headerTintColor: "#444",
           }}
         />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
