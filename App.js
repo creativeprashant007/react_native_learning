@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
+      <Drawer.Navigator screenOptions={{ headerShown: false }}>
         <Drawer.Screen
           name="Home"
           component={() => (
