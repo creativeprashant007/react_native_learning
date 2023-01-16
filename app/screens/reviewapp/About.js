@@ -5,7 +5,7 @@ import { globalStyles } from "../../../styles/global_style";
 function About(props) {
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>Home Screen</Text>
+      <Text style={globalStyles.titleText}>About screen</Text>
     </View>
   );
 }
