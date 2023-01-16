@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { globalStyles } from "../../../styles/global_style";
+import AppCard from "../../../shared/card.js";
 
 function Home({ navigation }) {
   const pressHandler = (item) => {
@@ -48,7 +49,9 @@ function Home({ navigation }) {
         data={reviews}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => pressHandler(item)}>
-            <Text style={globalStyles.titleText}>{item.title}</Text>
+            <AppCard>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </AppCard>
           </TouchableOpacity>
         )}
       />

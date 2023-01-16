@@ -10,9 +10,7 @@ const screens = {
   ReviewDetails: {
     screen: ReviewDetails,
   },
-  About: {
-    screen: About,
-  },
+  
 };
 const HomeStack = createNativeStackNavigator(screens);
 export default createAppContainer(HomeStack);

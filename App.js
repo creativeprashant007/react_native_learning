@@ -16,30 +16,33 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen
+          name="Home"
+          component={() => (
+            <Stack.Navigator>
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                // options={{
+                //   title: "Game Zone",
+                //   headerStyle: globalStyles.appBarStyle,
+                //   headerTintColor: "#444",
+                // }}
+              />
+              <Stack.Screen
+                name="ReviewDetails"
+                component={ReviewDetails}
+                options={{
+                  title: "Review Details",
+                  headerStyle: globalStyles.appBarStyle,
+                  headerTintColor: "#444",
+                }}
+              />
+            </Stack.Navigator>
+          )}
+        />
         <Drawer.Screen name="About" component={About} />
       </Drawer.Navigator>
-
-      {/* <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: "Game Zone",
-            headerStyle: globalStyles.appBarStyle,
-            headerTintColor: "#444",
-          }}
-        />
-        <Stack.Screen
-          name="ReviewDetails"
-          component={ReviewDetails}
-          options={{
-            title: "Review Details",
-            headerStyle: globalStyles.appBarStyle,
-            headerTintColor: "#444",
-          }}
-        />
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
