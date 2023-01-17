@@ -20,25 +20,25 @@ function Home({ navigation }) {
   const [reviews, setReviews] = useState([
     {
       title: "Aelda m Breath of Fresh Air",
-      reating: 5,
+      reating: '5',
       body: "lorem ispum",
       key: "1",
     },
     {
       title: "Gotta Catch Them alll(again)",
-      reating: 2.4,
+      reating: '2',
       body: "lorem ispum",
       key: "2",
     },
     {
       title: "Avengers Endgame",
-      reating: 4.5,
+      reating: '4.5',
       body: "lorem ispum",
       key: "3",
     },
     {
       title: "Avatar-Fall in the water",
-      reating: 5,
+      reating: '5',
       body: "lorem ispum",
       key: "4",
     },
