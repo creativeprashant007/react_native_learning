@@ -5,7 +5,7 @@ import AppCard from "../../../shared/card";
 import { globalStyles } from "../../../styles/global_style";
 function ReviewDetails({ route, navigation }) {
   const { title, reating, body, key } = route.params;
-var url = '../../assets/rating-' + "1" + '.png'
+var url = '../../assets/rating-' + reating + '.png'
   return (
     <View style={globalStyles.container}>
       <AppCard>
