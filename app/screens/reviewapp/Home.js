@@ -6,6 +6,7 @@ import {
   Button,
   FlatList,
   TouchableOpacity,
+  Modal
 } from "react-native";
 import { globalStyles } from "../../../styles/global_style";
 import AppCard from "../../../shared/card.js";
@@ -16,11 +17,11 @@ function Home({ navigation }) {
     navigation.navigate("ReviewDetails", item);
     //navigation.push("ReviewDetails")
   };
-
+const [modalOpen,setModalOpen] = useState(false);
   const [reviews, setReviews] = useState([
     {
       title: "Aelda m Breath of Fresh Air",
-      reating: '5',
+      reating: '3',
       body: "lorem ispum",
       key: "1",
     },
@@ -32,7 +33,7 @@ function Home({ navigation }) {
     },
     {
       title: "Avengers Endgame",
-      reating: '4.5',
+      reating: '4',
       body: "lorem ispum",
       key: "3",
     },
@@ -45,6 +46,14 @@ function Home({ navigation }) {
   ]);
   return (
     <View style={globalStyles.container}>
+
+      <Modal visible ={modalOpen} >
+
+        <View style = {styles.modalContent}>
+          <Text>Hello From the modal</Text>
+
+        </View>
+      </Modal>
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
@@ -58,5 +67,7 @@ function Home({ navigation }) {
     </View>
   );
 }
-
+const styles = StyleSheet.create({
+  modalContent:{}
+})
 export default Home;

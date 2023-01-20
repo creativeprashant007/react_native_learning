@@ -5,6 +5,8 @@ import AppCard from "../../../shared/card";
 import { globalStyles } from "../../../styles/global_style";
 function ReviewDetails({ route, navigation }) {
   const { title, reating, body, key } = route.params;
+
+ 
 const imgSrc = {
   "1":require("../../assets/rating-1.png"),
   "2":require("../../assets/rating-2.png"),
@@ -28,6 +30,12 @@ const imgSrc = {
   );
 }
 const styles = StyleSheet.create({
-  rating:{}
+  rating:{
+    flexDirection:'row',
+    justifyContent:'center',
+    paddingTop:16,
+    marginTop:16,borderTopWidth:1,
+    borderTopColor:"#EEE",
+  }
 })
 export default ReviewDetails;

@@ -23,11 +23,13 @@ export default function App() {
               <Stack.Screen
                 name="Home"
                 component={Home}
-                // options={{
-                //   title: "Game Zone",
-                //   headerStyle: globalStyles.appBarStyle,
-                //   headerTintColor: "#444",
-                // }}
+                options={{
+                  title: "Game Zone",
+                  headerStyle: globalStyles.appBarStyle,
+                  headerTintColor: "#444",
+                 
+                 
+                }}
               />
               <Stack.Screen
                 name="ReviewDetails"
