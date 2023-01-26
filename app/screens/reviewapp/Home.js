@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { globalStyles } from "../../../styles/global_style";
 import AppCard from "../../../shared/card.js";
-import MaterialIcon, { colorPalette } from "material-icons-react";
+import Icon from "react-native-vector-icons/FontAwesome";
 function Home({ navigation }) {
   const pressHandler = (item) => {
     // console.log(item.title);
@@ -46,15 +46,21 @@ function Home({ navigation }) {
   ]);
   return (
     <View style={globalStyles.container}>
-      <Modal visible={modalOpen}>
+      <Modal visible={modalOpen} animationType="slide">
         <View style={styles.modalContent}>
+          <Icon
+            name="close"
+            size={24}
+            color="#4F8EF7"
+            onPress={() => setModalOpen(false)}
+          />
           <Text>Hello From the modal</Text>
         </View>
       </Modal>
-      <MaterialIcon
-        name="rocket"
-        size={24}
-        style={{}}
+      <Icon
+        name="add"
+        size={30}
+        color="#4F8EF7"
         onPress={() => setModalOpen(true)}
       />
       <FlatList
@@ -71,6 +77,8 @@ function Home({ navigation }) {
   );
 }
 const styles = StyleSheet.create({
-  modalContent: {},
+  modalContent: {
+    margin: 30,
+  },
 });
 export default Home;
