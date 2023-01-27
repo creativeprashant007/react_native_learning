@@ -48,21 +48,17 @@ function Home({ navigation }) {
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType="slide">
         <View style={styles.modalContent}>
-          <Icon
-            name="close"
-            size={24}
-            color="#4F8EF7"
-            onPress={() => setModalOpen(false)}
-          />
+          <TouchableOpacity onPress={() => setModalOpen(false)}>
+            <Text style={styles.closeButton}>Close</Text>
+          </TouchableOpacity>
+
           <Text>Hello From the modal</Text>
         </View>
       </Modal>
-      <Icon
-        name="add"
-        size={30}
-        color="#4F8EF7"
-        onPress={() => setModalOpen(true)}
-      />
+      <TouchableOpacity onPress={() => setModalOpen(true)}>
+        <Text style={styles.addButton}>Add</Text>
+      </TouchableOpacity>
+
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
@@ -78,7 +74,17 @@ function Home({ navigation }) {
 }
 const styles = StyleSheet.create({
   modalContent: {
-    margin: 30,
+    margin: 50,
+  },
+  addButton: {
+    fontSize: 20,
+    color: "#000",
+    fontWeight: "bold",
+  },
+  closeButton: {
+    fontSize: 20,
+    color: "red",
+    fontWeight: "bold",
   },
 });
 export default Home;
