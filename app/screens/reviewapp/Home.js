@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { globalStyles } from "../../../styles/global_style";
 import AppCard from "../../../shared/card.js";
+import ReviewForm from "/Users/preashanttimalsina/Desktop/rtw/react_native_r_n_d/AwesomeProject/app/screens/reviewapp/ReviewForm.js";
 import Icon from "react-native-vector-icons/FontAwesome";
 function Home({ navigation }) {
   const pressHandler = (item) => {
@@ -52,7 +53,7 @@ function Home({ navigation }) {
             <Text style={styles.closeButton}>Close</Text>
           </TouchableOpacity>
 
-          <Text>Hello From the modal</Text>
+          <ReviewForm />
         </View>
       </Modal>
       <TouchableOpacity onPress={() => setModalOpen(true)}>
@@ -74,7 +75,8 @@ function Home({ navigation }) {
 }
 const styles = StyleSheet.create({
   modalContent: {
-    margin: 50,
+    marginTop: 50,
+    marginHorizontal: 20,
   },
   addButton: {
     fontSize: 20,
