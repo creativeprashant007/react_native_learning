@@ -17,5 +17,6 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#eed",
     height: 60,
   },
+  input: {},
 });
 var headerTitleColor = "#444";
